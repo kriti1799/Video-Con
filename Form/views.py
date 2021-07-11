@@ -68,7 +68,7 @@ def token(request):
 
     response = {
         'identity': identity,
-        'token': token.to_jwt()  
+        'token': token.to_jwt().decode("utf-8")  
     }
     #print (response)
     return JsonResponse(response)
