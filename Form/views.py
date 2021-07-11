@@ -79,19 +79,20 @@ def leftroom(request):
 
 def login(request):
     
-
+     print("ABC")
+     
      identity = Data.objects.last().name 
      room_vid = Data.objects.last().roomNo
      account_sid = settings.TWILIO_ACCOUNT_SID
      api_key = settings.TWILIO_API_KEY
      api_secret = settings.TWILIO_API_SECRET
      chat_service_sid = settings.TWILIO_CHAT_SERVICE_SID
-
+     print(account_sid, api_key, api_secret, chat_service_sid)
      token = AccessToken(account_sid, api_key, api_secret, identity=identity)
      #print(token)
      token.add_grant(VideoGrant(room=room_vid))
      response = {
-         'token' : token.to_jwt()
+         'token' : token.to_jwt().decode("utf-8")
          
 
     }
