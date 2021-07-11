@@ -46,7 +46,7 @@ def chat(request):
     #return HttpResponse("<h1> Chat Room entered</h1>")
 
 def token(request):
-    #print("ABC")
+    print("ABC")
     identity = Data.objects.last().name    #get name
     device_id = request.GET.get('device', 'default')  # unique device ID
     print(device_id)
