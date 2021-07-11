@@ -185,7 +185,7 @@ function connect(username) {
     $.getJSON(
       "/vid",
       ).then((data) => {
-        //window.alert(data.token)
+        window.alert(data.token)
         return Twilio.Video.connect(data.token);
       }).then(_room => {
           // Use client

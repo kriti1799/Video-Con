@@ -54,6 +54,7 @@ def token(request):
     api_key = settings.TWILIO_API_KEY
     api_secret = settings.TWILIO_API_SECRET
     chat_service_sid = settings.TWILIO_CHAT_SERVICE_SID
+    print(account_sid, api_key, api_secret, chat_service_sid)
 
     token = AccessToken(account_sid, api_key, api_secret, identity=identity)
     
@@ -67,7 +68,7 @@ def token(request):
 
     response = {
         'identity': identity,
-        'token': token.to_jwt()#.decode('utf-8')
+        'token': token.to_jwt()  
     }
     #print (response)
     return JsonResponse(response)
@@ -80,18 +81,19 @@ def login(request):
     
 
      identity = Data.objects.last().name 
+     room_vid = Data.objects.last().roomNo
      account_sid = settings.TWILIO_ACCOUNT_SID
      api_key = settings.TWILIO_API_KEY
      api_secret = settings.TWILIO_API_SECRET
      chat_service_sid = settings.TWILIO_CHAT_SERVICE_SID
 
      token = AccessToken(account_sid, api_key, api_secret, identity=identity)
-     print(token)
-     token.add_grant(VideoGrant(room='My Room'))
+     #print(token)
+     token.add_grant(VideoGrant(room=room_vid))
      response = {
          'token' : token.to_jwt()
          
 
     }
-     print(JsonResponse(response))
+     #print(JsonResponse(response))
      return JsonResponse(response)
