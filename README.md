@@ -14,7 +14,7 @@ $ pip install -r requirements.txt
 
 Once ```pip``` has finished downloading the dependencies:
 ```
-$ cd Sample
+
 $ python manage.py runserver
 ```
 And navigate to ```localhost:8000/login/ ```
