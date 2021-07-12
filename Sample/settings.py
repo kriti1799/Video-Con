@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-s$h*z5e57t1y+ka0&!64as#uyisy71bhfxh0&5!m2-@ko)-j7n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["video-con-kriti.herokuapp.com","localhost"]
+ALLOWED_HOSTS = ["video-con-kriti.herokuapp.com","localhost","127.0.0.1"]
 
 
 # Application definition
