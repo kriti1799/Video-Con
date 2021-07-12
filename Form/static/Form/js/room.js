@@ -1,4 +1,5 @@
 // chat/static/chat/scripts/rooms.js
+//defined global variables so as to be used in various functions
 let username ;
 const button = document.getElementById('join_leave');
 const container = document.getElementById('container');
@@ -141,15 +142,18 @@ $(function() {
 //          window.location.href= url  ; 
 //     }
 
+//Local video will be called automatically using Twilio APIs
 function addLocalVideo() {
       Twilio.Video.createLocalVideoTrack().then(track => {
           let video = document.getElementById('local').firstChild;
           video.appendChild(track.attach());
       });
   };
-
+//Local video function called
   addLocalVideo();
-  
+
+  // Button functionality defined. The join call button would change to connecting and then leave call.
+  // On clicking on leave call, it would change to join call again.
   function connectButtonHandler(event) {
     event.preventDefault();
     if (!connected) {
@@ -178,6 +182,7 @@ function addLocalVideo() {
     }
 };
 
+// Adding an event listener so that it keeps checking of the clicks
 button.addEventListener('click', connectButtonHandler);
 
 function connect(username) {
@@ -203,6 +208,7 @@ function connect(username) {
       return promise;
   }
 
+// Keeps showing how many participants including the user are online
   function updateParticipantCount() {
     if (!connected)
         count.innerHTML = 'Disconnected.';
@@ -210,6 +216,7 @@ function connect(username) {
         count.innerHTML = (room.participants.size + 1) + ' participants online.';
 };
 
+//Shows the video of other participants
 function participantConnected(participant) {
   let participantDiv = document.createElement('div');
   participantDiv.setAttribute('id', participant.sid);
@@ -239,14 +246,16 @@ function participantDisconnected(participant) {
   updateParticipantCount();
 };
 
+//Track added on connecting
 function trackSubscribed(div, track) {
   div.appendChild(track.attach());
 };
-
+//Track removed on disconnecting
 function trackUnsubscribed(track) {
   track.detach().forEach(element => element.remove());
 };
 
+//Call disconnect feature
 function disconnect() {
   room.disconnect();
   while (container.lastChild.id != 'local')
