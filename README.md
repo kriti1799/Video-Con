@@ -1,14 +1,5 @@
 # Video Conference and Chat application
 
-This application has been hosted on Heroku. The link for the same is : https://video-con-kriti.herokuapp.com/login . 
-1) The first page that appears is **chat room** . You need to input our name and create a chat room/join a chat room that has already been created.
-Click on **Start Call**.
-2) The next page would show the people present in the chat room. **Click Start**.
-3) On clicking start, you would enter the chat rooom, which will have a chat as well as a video application. The chat application would be available irrespective of
-whether the video call has been connected or not (in accordance to the challenge in adapt phase). You can **click on Join call**, and then wait for other participants
-to do the same. Once they have joined the call, you will be able to see all of their videos as well as messages.
-4) On clicking **Leave call**, you would be disconnected but the message interface would still be active.
-
 ## Setup
 To run this on local machine,
 Open terminal.
@@ -28,7 +19,18 @@ $ python manage.py runserver
 ```
 And navigate to ```localhost:8000/login/ ```
 The database can be found at ```localhost:8000/admin/```
-The next steps are the same as above.
+
+
+## Walkthrough
+
+This application has been hosted on Heroku. The link for the same is : https://video-con-kriti.herokuapp.com/login . 
+1) The first page that appears is **chat room** . You need to input our name and create a chat room/join a chat room that has already been created.
+Click on **Start Call**.
+2) The next page would show the people present in the chat room. **Click Start**.
+3) On clicking start, you would enter the chat rooom, which will have a chat as well as a video application. The chat application would be available irrespective of
+whether the video call has been connected or not (in accordance to the challenge in adapt phase). You can **click on Join call**, and then wait for other participants
+to do the same. Once they have joined the call, you will be able to see all of their videos as well as messages.
+4) On clicking **Leave call**, you would be disconnected but the message interface would still be active.
 
 ### Building blocks
 For this software, I have used
