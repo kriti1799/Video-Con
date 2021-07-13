@@ -7,6 +7,10 @@ Open terminal.
 $ git clone https://github.com/kriti1799/Video-Con.git
 $ cd Video-Con
 ```
+Make a twilio account, and check for the account SID.  
+Make a .env file in the root folder, and copy the id.  
+Make an API key, and copy values of the API and the secret key.  
+Make a chat service SID, copy its vaalue to the .env file as well.  
 Install the dependencies.
 ```
 $ pip install -r requirements.txt
