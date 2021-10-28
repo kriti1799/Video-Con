@@ -43,7 +43,8 @@ For this software, I have used
 3) Django Framework
 4) Twilio API to integrate video and chat application.
 
-Video link for my application : 
+Video link for my application : https://drive.google.com/file/d/1PDy4Do0hLpuWEi0jYGm-qZv-57jOxcoX/view?usp=drivesdk
+
 
 ### More Information
 I set up the project using Django framework.
